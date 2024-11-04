@@ -14,10 +14,10 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char	*ret;
-	int		i;
-	int		j;
-	const char *empty;
+	char		*ret;
+	int			i;
+	int			j;
+	const char	*empty;
 
 	empty = "";
 	i = -1;
