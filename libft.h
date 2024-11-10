@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lpolizzi <lpolizzi@student.42nice.fr>      +#+  +:+       +#+        */
+/*   By: lpolizzi <lpolizzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 18:27:02 by lpolizzi          #+#    #+#             */
-/*   Updated: 2024/10/13 18:33:18 by lpolizzi         ###   ########.fr       */
+/*   Updated: 2024/11/10 17:05:27 by lpolizzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_strdup(const char *s);
 void				*ft_memmove(void *dst, const void *src, size_t len);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
@@ -55,6 +56,12 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+// Printf
+int					ft_printf(const char *format, ...);
+
+// GNL
+int					get_next_line(int fd, char **line);
 
 // Bonus struct and functions
 typedef struct s_list
