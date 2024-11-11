@@ -6,7 +6,7 @@
 /*   By: lpolizzi <lpolizzi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 18:27:02 by lpolizzi          #+#    #+#             */
-/*   Updated: 2024/11/10 17:05:27 by lpolizzi         ###   ########.fr       */
+/*   Updated: 2024/11/10 17:17:46 by lpolizzi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void				ft_putnbr_fd(int n, int fd);
 int					ft_printf(const char *format, ...);
 
 // GNL
-int					get_next_line(int fd, char **line);
+char					*get_next_line(int fd);
 
 // Bonus struct and functions
 typedef struct s_list

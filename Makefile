@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lpolizzi <lpolizzi@student.42.fr>          +#+  +:+       +#+         #
+#    By: lpolizzi <lpolizzi@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/07 20:18:29 by lpolizzi          #+#    #+#              #
-#    Updated: 2024/11/10 16:55:21 by lpolizzi         ###   ########.fr        #
+#    Created: 2024/11/10 17:19:22 by lpolizzi          #+#    #+#              #
+#    Updated: 2024/11/11 11:26:02 by lpolizzi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ LIBCFILE =		ft_atoi					ft_bzero					ft_isalnum			ft_isalpha		\
 				ft_memcmp				ft_memcpy					ft_memmove			ft_memset		\
 				ft_strchr				ft_strdup					ft_strlcat			ft_strlcpy		\
 				ft_strlen				ft_strncmp					ft_strnstr			ft_strrchr		\
-				ft_tolower				ft_toupper					ft_calloc			ft_strcmp
+				ft_tolower				ft_toupper					ft_calloc			ft_strcmp		\
+				ft_strstr
 	
 ADDIFILE =  	ft_strjoin				ft_substr					ft_strtrim			ft_split		\
 				ft_itoa					ft_strmapi					ft_striteri			ft_putchar_fd		\
@@ -37,31 +38,31 @@ BONUSFILE = 	ft_lstnew_bonus			ft_lstadd_front_bonus		ft_lstsize_bonus	ft_lstlas
 PRINTFFILE = 	ft_printf				ft_printf_utils				ft_print_hex		ft_print_ptr		\
 				ft_print_unsigned
 		
-GNLFILE = 		get_next_line 			get_next_line_utils
+GNLFILE = 		get_next_line	
 
-LIBC = ${addprefix ${LIBCDIR}/, ${addsuffix .c, ${LIBCFILE}}}
-ADDI = ${addprefix ${ADDIDIR}/, ${addsuffix .c, ${ADDIFILE}}}
-BONUS = ${addprefix ${BONUSDIR}/, ${addsuffix .c, ${BONUSFILE}}}
-PRINTF = ${addprefix ${PRINTFDIR}/srcs/, ${addsuffix .c, ${PRINTFFILE}}}
-GNL = ${addprefix ${GNLDIR}/srcs/, ${addsuffix .c, ${GNLFILE}}}
+LIBC = $(addprefix $(LIBCDIR)/, $(addsuffix .c, $(LIBCFILE)))
+ADDI = $(addprefix $(ADDIDIR)/, $(addsuffix .c, $(ADDIFILE)))
+BONUS = $(addprefix $(BONUSDIR)/, $(addsuffix .c, $(BONUSFILE)))
+PRINTF = $(addprefix $(PRINTFDIR)/srcs/, $(addsuffix .c, $(PRINTFFILE)))
+GNL = $(addprefix $(GNLDIR)/srcs/, $(addsuffix .c, $(GNLFILE)))
 
-SRCS = ${LIBC} ${ADDI} ${BONUS} ${PRINTF} ${GNL}
+SRCS = $(LIBC) $(ADDI) $(BONUS) $(PRINTF) $(GNL)
 
-OBJS = ${SRCS:.c=.o}
+OBJS = $(SRCS:.c=.o)
 
-all: ${NAME}
+all: $(NAME)
 
-${NAME}: ${OBJS}
-						ar rcs ${NAME} ${OBJS}
+$(NAME): $(OBJS)
+						ar rcs $(NAME) $(OBJS)
 
 .c.o:
-						${COMP} ${CFLAGS} -c $< -o $@
+						$(COMP) $(CFLAGS) -c $< -o $@
 
 clean:
-						rm -rf ${OBJS} #${OBJS_BONUS}
+						rm -rf $(OBJS)
 
 fclean: clean
-						rm -rf ${NAME}
+						rm -rf $(NAME)
 
 re: fclean all
 
