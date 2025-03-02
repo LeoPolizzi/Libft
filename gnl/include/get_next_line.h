@@ -13,12 +13,11 @@
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include "libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-
-# include "libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -27,5 +26,10 @@
 # ifndef MAX_FD
 #  define MAX_FD 1024
 # endif
+
+char	*gnl_strdup(const char *s);
+size_t	gnl_strlen(const char *str);
+char	*gnl_strjoin(char *s1, const char *s2);
+int		gnl_strchr(const char *s, int c);
 
 #endif
