@@ -61,7 +61,7 @@ void				ft_putnbr_fd(int n, int fd);
 int					ft_printf(const char *format, ...);
 
 // GNL
-char					*get_next_line(int fd);
+char				*get_next_line(int fd);
 
 // Bonus struct and functions
 typedef struct s_list
